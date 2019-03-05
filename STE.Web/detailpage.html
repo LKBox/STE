@@ -1,0 +1,65 @@
+﻿<div id="detailpage" class="darkback">
+	<div class="col-md-12 p-md-2">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="card border shadow">
+					<div class="card-header">
+						<div class="row">
+							<div class="col-md-12">
+								<a href="#/list" class="float-left"><i class="fa fa-arrow-alt-circle-left"></i> Back</a>
+								<small class="float-right">{{article.CreateDate | date:'dd.MM.yyyy HH:mm:ss'}}</small>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<small class="ftitle">Article Title:</small>
+								<input type="text" ng-model="article.Title" class="form-control" />
+							</div>
+						</div>
+					</div>
+					<div class="card-body text-secondary">
+						<div class="row">
+							<div class="col-md-8">
+								<small class="ftitle" style="display:inline-block">Article Text:</small>
+							</div>
+							<div class="col-md-4">
+								<div class="input-group pl-0 my-1">
+									<input class="form-control my-0 p-md-1 form-control-sm" type="text" placeholder="Search" aria-label="Search" ng-model="search.text">
+									<div class="input-group-append">
+										<span class="input-group-text amber lighten-3" id="basic-text1">
+											<i class="fas fa-search text-grey" aria-hidden="true"></i>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div contenteditable="true" class="myeditor" ng-bind-html="article.ArticleText | highlight:search.text" ng-model="article.ArticleText"></div>	
+						
+						<small class="float-left">{{article.LastUpdate | date:'dd.MM.yyyy HH:mm:ss'}}</small>
+						<button class="btn btn-success btn-sm float-right" ng-show="isNew" ng-click="create(article)"><i class="fa fa-save"></i> Save</button>
+						<button class="btn btn-success btn-sm float-right" ng-hide="isNew" ng-click="update(article)"><i class="fa fa-save"></i> Update</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="card border shadow" ng-hide="isNew">
+					<div class="card-header">Old Versions</div>
+					<div class="card-body text-secondary">
+						<ul class="mylist versions">
+							<li ng-repeat="version in articleVersions">
+								<span>{{version.VersionDate | date:'dd.MM.yyyy HH:mm:ss'}}</span>
+								<div class="btn-group float-right">
+									<a href="" class="btn btn-xs btn-primary" ng-click="openVersion(version)"><i class="fa fa-folder-open"></i></a>
+									<a href="" class="btn btn-xs btn-danger" ng-click="deleteVersion(version.Id)"><i class="fa fa-trash-alt"></i></a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div ng-include="'oldversion.html'" ng-show="showOld"></div>

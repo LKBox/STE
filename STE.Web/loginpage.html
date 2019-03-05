@@ -1,0 +1,41 @@
+﻿<div id="loginpage">
+	<div class="row p-md-3">
+		<div class="col-md-4 offset-md-4 p-md-2">
+			<div class="card text-center">
+				<div class="card-header">
+					Login
+				</div>
+
+				<form name="loginform" ng-submit="login()">
+					<div class="card-body">
+						<div class="form-group">
+							<label for="username" class="float-left">Username</label>
+							<input name="username" type="text" class="form-control" ng-model="username" required>
+
+							<span style="color:red" ng-show="loginform.username.$dirty && loginform.username.$invalid">
+								<span ng-show="loginform.username.$error.required">Username is required.</span>
+							</span>
+						</div>
+						<div class="form-group">
+							<label for="password" class="float-left">Password</label>
+							<input name="password" type="password" class="form-control" ng-model="password" required>
+
+							<span style="color:red" ng-show="loginform.password.$dirty && loginform.password.$invalid">
+								<span ng-show="loginform.password.$error.required">Password is required.</span>
+							</span>
+						</div>
+						<button type="submit" class="btn btn-primary">Login <i class="fa fa-sign-in-alt"></i></button>
+					</div>
+				</form>
+
+				<div class="card-footer text-muted">
+					<small>
+						Username: admin
+						<br />
+						Password: 12345
+					</small>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

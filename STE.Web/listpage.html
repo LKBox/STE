@@ -1,0 +1,23 @@
+﻿<div id="listpage" class="darkback">
+	<div class="row p-md-2">
+		<div class="col-md-12">
+			<div class="card border shadow">
+				<div class="card-header">
+					Article List
+					<a href="#/detail/0" class="btn btn-success btn-xs float-right"><i class="fa fa-plus"></i>New Article</a>					
+				</div>
+				<div class="card-body text-secondary">
+					<ul class="mylist">
+						<li ng-repeat="article in articles">
+							<span>{{article.Title}}</span>
+							<div class="btn-group float-right">
+								<a href="#/detail/{{article.Id}}" class="btn btn-xs btn-primary"><i class="fa fa-folder-open"></i> Open</a>
+								<a href="" class="btn btn-xs btn-danger" ng-click="delete(article)"><i class="fa fa-trash-alt"></i> Delete</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

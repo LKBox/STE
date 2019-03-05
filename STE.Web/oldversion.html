@@ -1,0 +1,21 @@
+﻿<div id="oldVersionModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">
+					{{oldVersion.Title}}
+				</h4>
+				<small class="float-right">{{oldVersion.VersionDate | date:'dd.MM.yyyy HH:mm:ss'}}</small>
+			</div>
+			<div class="modal-body">
+				<div contenteditable="false" class="myeditor" ng-bind-html="oldVersion.ArticleText" ng-model="oldVersion.ArticleText"></div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+
+	</div>
+</div>
