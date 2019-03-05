@@ -10,13 +10,7 @@ namespace STE.API.Auth
 	public class Startup : IStartup
 	{
 		public void Configuration(IAppBuilder app)
-		{			
-			//HttpConfiguration config = new HttpConfiguration();			
-			//WebApiConfig.Register(config);
-			//app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
-			//app.UseWebApi(config);
-			//ConfigureOAuth(app);
-
+		{
 			HttpConfiguration config = new HttpConfiguration();
 			ConfigureOAuth(app);
 			WebApiConfig.Register(config);
@@ -29,8 +23,8 @@ namespace STE.API.Auth
 			{
 				TokenEndpointPath = new PathString("/gettoken"),
 				AccessTokenExpireTimeSpan = TimeSpan.FromDays(30),
-				AllowInsecureHttp = true,				
-				Provider = new Provider()			
+				AllowInsecureHttp = true,
+				Provider = new Provider()
 			};
 			app.UseOAuthAuthorizationServer(oAuthAuthorizationServerOptions);
 			app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());

@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\script\app.js" />
-    <Content Include="content\script\articleService.js" />
     <Content Include="content\script\detailController.js" />
     <Content Include="content\script\listController.js" />
     <Content Include="content\script\loginController.js" />

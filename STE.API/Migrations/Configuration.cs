@@ -2,19 +2,19 @@ namespace STE.API.Migrations
 {
 	using STE.API.Models;
 	using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+	using System.Data.Entity;
+	using System.Data.Entity.Migrations;
+	using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<STE.API.Models.STEDBContext>
-    {
-        public Configuration()
-        {
-            AutomaticMigrationsEnabled = true;
-        }
+	internal sealed class Configuration : DbMigrationsConfiguration<STE.API.Models.STEDBContext>
+	{
+		public Configuration()
+		{
+			AutomaticMigrationsEnabled = true;
+		}
 
-        protected override void Seed(STE.API.Models.STEDBContext context)
-        {
+		protected override void Seed(STE.API.Models.STEDBContext context)
+		{
 			//  This method will be called after migrating to the latest version.
 
 			//  You can use the DbSet<T>.AddOrUpdate() helper extension method 
@@ -32,5 +32,5 @@ namespace STE.API.Migrations
 			context.Users.AddOrUpdate(x => x.UserName, usr);
 			context.SaveChanges();
 		}
-    }
+	}
 }
