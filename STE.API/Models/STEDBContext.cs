@@ -13,7 +13,7 @@ namespace STE.API.Models
 		public DbSet<Article> Articles { get; set; }
 		public DbSet<ArticleVersion> ArticleVersions { get; set; }
 
-		public STEDBContext() : base("data source=WIN-MTMSTKCULIM;initial catalog=STEDB;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework")
+		public STEDBContext() : base("STEConnectionString")
 		{
 			Database.SetInitializer<STEDBContext>(new CreateDatabaseIfNotExists<STEDBContext>());
 			this.Configuration.LazyLoadingEnabled = false;
