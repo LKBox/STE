@@ -65,6 +65,7 @@
     <Content Include="content\script\detailController.js" />
     <Content Include="content\script\listController.js" />
     <Content Include="content\script\loginController.js" />
+    <Content Include="content\structure.png" />
     <Content Include="content\style\style.css" />
     <Content Include="detailpage.html" />
     <Content Include="favicon.ico" />
